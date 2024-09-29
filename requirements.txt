@@ -52,5 +52,6 @@ newspaper3k==0.2.8
 stopwords==1.0.0
 wordcloud==1.9.2
 opencv-python==4.8.1.78
+configparser==5.0.2
 deepface
 langdetect
