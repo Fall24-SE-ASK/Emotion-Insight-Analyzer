@@ -15,7 +15,7 @@ incremental==22.10.0
 itemadapter==0.8.0
 itemloaders==1.1.0
 jmespath==0.10.0
-joblib==1.4.2
+joblib==0.16.0
 lxml==4.9.3
 nltk==3.5
 parsel==1.6.0
@@ -52,10 +52,5 @@ newspaper3k==0.2.8
 stopwords==1.0.0
 wordcloud==1.9.2
 opencv-python==4.8.1.78
-configparser==5.0.2
-numpy==1.23.5
-tensorflow==2.17.0
-scikit-learn==1.5.2
-spanish-nlp==0.1.12
-deepface==0.0.89
-langdetect==1.0.9
+deepface
+langdetect
