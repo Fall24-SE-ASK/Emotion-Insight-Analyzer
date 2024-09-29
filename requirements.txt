@@ -57,7 +57,7 @@ numpy==1.23.5
 tensorflow==2.17.0
 thinc==8.0.17
 scikit-learn==1.5.2
-spanish-nlp==3.0.12
+spanish-nlp==0.1.12
 keras==3.5.0
 tf-keras==2.17.0
 deepface==0.0.89
