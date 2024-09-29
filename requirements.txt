@@ -55,10 +55,7 @@ opencv-python==4.8.1.78
 configparser==5.0.2
 numpy==1.23.5
 tensorflow==2.17.0
-thinc==8.0.17
 scikit-learn==1.5.2
 spanish-nlp==0.1.12
-keras==3.5.0
-tf-keras==2.17.0
 deepface==0.0.89
 langdetect==1.0.9
