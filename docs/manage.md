@@ -1,6 +1,6 @@
-# Location: Emotion-Insight-Analyzer/sentimental_analysis/
+# manage.py:
+## Location: Emotion-Insight-Analyzer/sentimental_analysis/
 
-## manage.py:
     main() function:
         Environment Setup: Sets the default settings module for the Django project.
         Import and Execute: Imports the execute_from_command_line function from Django's core management module and runs it with the command-line arguments.
