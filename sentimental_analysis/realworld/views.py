@@ -26,6 +26,8 @@ import cv2
 from deepface import DeepFace
 from langdetect import detect
 from spanish_nlp import classifiers
+from textblob import TextBlob
+from textblob_fr import PatternTagger, PatternAnalyzer
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -206,9 +208,10 @@ def textanalysis(request):
         final_comment = text_data.split('.')
         result = {}
         finalText = final_comment
-        if determine_language(final_comment):
+        lang = determine_language(final_comment)
+        if lang == "en":
             result = detailed_analysis(final_comment)
-        else:
+        elif lang == "es":
             sc = classifiers.SpanishClassifier(model_name="sentiment_analysis")
             result_string = ' '.join(final_comment)
             result_classifier = sc.predict(result_string)
@@ -217,22 +220,38 @@ def textanalysis(request):
                 'neu': result_classifier.get('neutral', 0.0),
                 'neg': result_classifier.get('negative', 0.0)
             }
+        elif lang == "fr":
+            text = ' '.join(final_comment)
+            blob = TextBlob(text, pos_tagger=PatternTagger(), analyzer=PatternAnalyzer())
+            polarity = blob.sentiment[0]
+            
+            # Estimate separate scores
+            if polarity > 0.1:
+                result =  {"pos": polarity, "neg": 0.0, "neu": 1 - polarity}
+            elif polarity < -0.1:
+                result =  {"pos": 0.0, "neg": abs(polarity), "neu": 1 - abs(polarity)}
+            else:
+                result = {"pos": 0.0, "neg": 0.0, "neu": 1.0}
+        else:
+            result = {'error': f'{lang} is not supported yet!'}
         return render(request, 'realworld/results.html', {'sentiment': result, 'text' : finalText})
     else:
         note = "Enter the Text to be analysed!"
         return render(request, 'realworld/textanalysis.html', {'note': note})
     
 def determine_language(texts):
+    langs = []
     try:
         for text in texts:
-            lang = detect(text)
-            if lang != 'en':
-                return False
-        return True
+            langs.append(detect(text))
     except Exception as e:
         # Handle potential exceptions when using langdetect
         print(f"Error detecting language: {e}")
         return False
+    unique_langs = list(set(langs))
+    if len(unique_langs) != 1:
+        return False
+    return unique_langs[0]
 
     
 def fbanalysis(request):
