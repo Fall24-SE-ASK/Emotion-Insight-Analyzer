@@ -1,7 +1,7 @@
 # Utitity Codes
 
 ## twitter_scrap.py:
-- Uses the `matplotlib` library for plotting graphs and `nltk` for natural language processing.
+Uses the `matplotlib` library for plotting graphs and `nltk` for natural language processing.
 
 ### twitter_sentiment_score():
 - Reads tweets from the `twitt.txt` file.
