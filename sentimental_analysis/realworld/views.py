@@ -28,6 +28,7 @@ from langdetect import detect
 from spanish_nlp import classifiers
 from textblob import TextBlob
 from textblob_fr import PatternTagger, PatternAnalyzer
+from nrclex import NRCLex
 
 def pdfparser(data):
     fp = open(data, 'rb')
@@ -202,6 +203,13 @@ def productanalysis(request):
         note = "Please Enter the product blog link for analysis"
         return render(request, 'realworld/productanalysis.html', {'note': note})
 
+def text_emotion_analysis(text):
+    emotion_counts = {}
+    text_emotion = NRCLex(text)
+    for emotion, score in text_emotion.raw_emotion_scores.items():
+        emotion_counts[emotion] = emotion_counts.get(emotion, 0) + score
+    return emotion_counts
+
 def textanalysis(request):
     if request.method == 'POST':
         text_data = request.POST.get("textField", "")
@@ -211,6 +219,7 @@ def textanalysis(request):
         lang = determine_language(final_comment)
         if lang == "en":
             result = detailed_analysis(final_comment)
+            result['emotions'] = text_emotion_analysis(' '.join(final_comment))
         elif lang == "es":
             sc = classifiers.SpanishClassifier(model_name="sentiment_analysis")
             result_string = ' '.join(final_comment)
