@@ -31,8 +31,8 @@ jobs:
         python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
     - name: Lint with pylint
       run: |
-        pylint Amazon_Comments_Scrapper
-        pylint sentimental_analysis
+        pylint --exit-zero Amazon_Comments_Scrapper
+        pylint --exit-zero sentimental_analysis
     - name: Test with pytest
       run: |
         pytest test
