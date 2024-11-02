@@ -52,3 +52,6 @@ Uses `detect()` from the `langdetect` library to detect the language based on th
 Takes an audio file as input, determines the extension, and stores it in a location. Uses `speech_to_text()` (which uses `speech_recognition` from the Google Web Speech API to convert audio to text) to convert audio to text.
 
 Calls `detailed_analysis()` on the text to perform sentiment analysis, and the result is then rendered.
+
+### pdfparser(request):
+Converts pdf file to text
