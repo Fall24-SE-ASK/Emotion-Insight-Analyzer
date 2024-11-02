@@ -1,7 +1,7 @@
 # <img src="https://github.com/Fall24-SE-ASK/Emotion-Insight-Analyzer/blob/master/sentimental_analysis/realworld/static/images/logo-black-2.png" height="42" width="42"/>Emotion Insight Analyzer
 ## Software Engineering Project for CSC 510
 
-[![DOI](https://zenodo.org/badge/720907878.svg)](https://zenodo.org/doi/10.5281/zenodo.10211649)
+[![DOI](https://zenodo.org/badge/881529485.svg)](https://doi.org/10.5281/zenodo.14028705)
 [![GitHub Release](https://img.shields.io/github/release/Fall24-SE-ASK/Emotion-Insight-Analyzer)](https://github.com/Fall24-SE-ASK/Emotion-Insight-Analyzer/releases)
 ![Build](https://github.com/Fall24-SE-ASK/Emotion-Insight-Analyzer/actions/workflows/main.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
