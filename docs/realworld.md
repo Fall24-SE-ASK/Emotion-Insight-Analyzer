@@ -1,4 +1,4 @@
-# Project: Emotion-Insight-Analyzer/realworld/
+# Project-Location: Emotion-Insight-Analyzer/realworld/
 
 ## apps.py:
 Used to configure the application for the Django project.
