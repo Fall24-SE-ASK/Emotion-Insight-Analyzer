@@ -12,8 +12,7 @@
 ## fb_scrap.py:
 - Similar to `twitter_scrap.py`, it reads Facebook posts, builds, trains, evaluates, and validates models, and returns the sentiment scores.
 
-### Main function:
-- `fb_sentiment_score()`
+- Main function: `fb_sentiment_score()`
 
 ## newsScraper.py:
 ### scrapNews() function:
