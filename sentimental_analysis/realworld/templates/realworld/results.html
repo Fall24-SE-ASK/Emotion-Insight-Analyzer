@@ -82,6 +82,18 @@
                <div>
                   <div id="chartContainer2" style="height: 600px; width: 71%; margin-left: auto; margin-right: auto; background-color: gray;"></div>
                </div>
+               {% if 'emotions' in sentiment %}
+               <div class="row clearfix" style="padding-bottom: 10px; padding-left: 30px; padding-top: 10px;">
+                  <h2 class="section-title">Emotions detected</h2>
+                  {% if sentiment.emotions.items %}
+                     {% for k, v in sentiment.emotions.items %}
+                        <li>{{k}}</li>
+                     {% endfor %}
+                  {% else %}
+                     <p>No emotions detected :(</p>
+                  {% endif %}
+               </div>
+               {% endif %}
             </section>
          </main>
         
