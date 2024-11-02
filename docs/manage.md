@@ -1,4 +1,4 @@
-Emotion-Insight-Analyzer/sentimental_analysis/
+Location: Emotion-Insight-Analyzer/sentimental_analysis/
 manage.py:
 	main() function:
         Environment Setup: Sets the default settings module for the Django project.
